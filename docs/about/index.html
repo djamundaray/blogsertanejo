@@ -1,0 +1,453 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="a-news-blog-template-inspired-by-g-news">
+    <meta name="keywords" content="bloglifestyle" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="author" href="humans.txt" />
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Progressive Web App -->
+    <meta name="theme-color" content="white">
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="/images/icons/desktop/android-chrome-192x192.png">
+    <link rel="icon" sizes="512x512" href="/images/icons/desktop/android-chrome-512x512.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="A zUIx website">
+    <link rel="apple-touch-icon-precomposed" href="/images/icons/desktop/apple-touch-icon.png">
+    <link rel="mask-icon" href="/images/icons/desktop/safari-pinned-tab.svg" color="#5bbad5">
+
+    <!-- Tile color for Windows -->
+    <meta name="msapplication-TileImage" content="/images/icons/desktop/mstile-150x150.png">
+    <meta name="msapplication-TileColor" content="#ffc40d">
+
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/desktop/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/desktop/favicon-16x16.png">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="https://www.example.com/">
+    -->
+
+    <link rel="preload" as="style" href="/css/fla/flex-layout-attribute.min.css" />
+    <link rel="stylesheet" href="/css/fla/flex-layout-attribute.min.css" />
+    <link rel="preload" as="style" href="/css/animate.min.css" />
+    <link rel="stylesheet" href="/css/animate.min.css" />
+
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap">
+
+
+
+    <!--elasticlunr JS -->
+    <link rel="preload" as="script" href="/js/elasticlunr/elasticlunr.min.js">
+    <script src="/js/elasticlunr/elasticlunr.min.js" defer async></script>
+
+
+    <!-- zuix.js https://github.com/zuixjs/zuix -->
+    <link rel="preload" as="script" href="/js/zuix/zuix.min.js">
+    <link rel="preload" as="script" href="/config.js">
+    <link rel="preload" as="script" href="/js/zuix/animate-css.js">
+    <script src="/js/zuix/zuix.min.js"></script>
+    <script src="/config.js"></script>
+    <script src="/js/zuix/animate-css.js"></script>
+
+<style>
+    /* CSS files add styling rules to your content */
+
+body {
+    font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+    font-size: 16px;
+    margin: 0; padding: 0;
+    background: white;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    overscroll-behavior-y: contain;
+    overflow-y: hidden;
+}
+
+a, a:visited, a:hover {
+    font-weight: 700;
+    color: deeppink;
+    text-decoration: none;
+}
+
+button:hover, button:active, a.button:hover, a.button:active {
+    background: rgba(180,180,180,0.1)!important;
+}
+
+.content {
+    font-family: serif;
+    font-size: 110%;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.feed-pager {
+    height: 100vh;
+}
+
+.list {
+    margin-top: 96px;
+    margin-bottom: 24px;
+}
+
+.hidden {
+    display: none!important;
+}
+
+.message {
+    color: darkgrey;
+    width: 100vw;
+    font-size: 200%;
+    overflow: hidden;
+}
+.message i {
+    margin-left: 16px;
+    color: darkgrey;
+    font-size: 150%;
+}
+
+
+.page-scroll {
+    position:absolute;
+    top:56px;
+    bottom:56px;
+    left:0;
+    right:0;
+    overflow-y: auto;
+}
+
+
+iframe[z-field=content-frame] {
+    position: fixed;
+    display: block;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    border: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 100;
+    background: white;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<noscript>
+Turn on JavaScript to access this site content.
+</noscript>
+
+<!-- The header bars (for each page) -->
+
+<div z-field="header-bar" z-component="fragment" header-bar="">
+
+    <div class="header" layout="row center-justify" header-bar="">
+        <div z-field="header-box" layout="row center-left" header-bar="">
+
+          
+             <div class="title" layout="row center-left" header-bar="">
+                About
+             </div>
+
+        
+
+        </div>
+        <img src="/images/zuix-logo.svg" width="32" height="32" alt="Logo" class="logo" header-bar="">
+    </div>
+    <div z-field="header-tools" header-bar="">
+
+        
+
+    </div>
+
+</div>
+
+<style>
+
+[z-component][header-bar] {
+    position: fixed;    top:0;    left:0;    right:0;    height:auto;    background: rgba(248,248,248,1);    border-bottom: solid 1px rgba(0,0,0,0.25);    box-shadow: 0 5px 2px -2px rgba(100,100,100,0.15);    z-index: 2!important;}
+
+[z-component][header-bar]
+.header {
+    height: 56px;    max-height: 56px;}
+
+[z-component][header-bar]
+.title {
+    opacity: 0.5;    font-size: 180%;    font-weight: 550;}
+
+[z-component][header-bar]
+.logo {
+    margin-right: 12px;}
+
+[z-component][header-bar]
+.topics {
+    width: 100%;    height:40px;}
+
+[z-component][header-bar]
+.topics div {
+    font-size: 16px;    height:36px;    min-width: 96px;    text-align: center;    vertical-align: middle;    line-height: 36px;    border-bottom: solid 4px transparent;    cursor: pointer;}
+
+[z-component][header-bar]
+[z-field="header-box"] {
+    padding-left: 12px;    padding-right: 12px;    height: 100%;}
+
+[z-component][header-bar]
+.header-button {
+    padding: 0;    background: transparent;    border: none;    border-radius: 8px;    color: rgba(0,0,0,0.5);}
+
+[z-component][header-bar]
+.header-button i {
+    font-size: 200%;    padding: 12px;}
+
+[z-component][header-bar]
+[z-field="header-tools"] .active {
+    color: initial;    font-weight: bold;    border-bottom: solid 4px blue !important;}
+
+[z-component][header-bar]
+.search-box {
+    width: 100%;    max-width: 640px;    height: 100%;    text-align: center;    display: flex;    align-items: center;    justify-content: center;}
+
+[z-component][header-bar]
+.search-box input {
+    width: 100%;    font-size: 130%;    font-family: inherit;    line-height: inherit;    color: #2e3750;    min-width: 12em;}
+
+[z-component][header-bar]
+.search-box .input {
+    width: 100%;    position: relative;    background: linear-gradient(21deg, #10abff, #1beabd);    padding: 1px;    display: inline-block;    border-radius: 9999em;    margin: 8px;}
+
+[z-component][header-bar]
+.search-box .input *:not(span) {
+    position: relative;    display: inherit;    border-radius: inherit;    margin: 0;    border: none;    outline: none;    padding: 3px 8px;    z-index: 1;}
+
+[z-component][header-bar]
+.search-box .input *:not(span):focus + span {
+    opacity: 1;    -webkit-transform: scale(1);    transform: scale(1);}
+
+[z-component][header-bar]
+.search-box .input span {
+    -webkit-transform: scale(1);    transform: scale(1);    transition: opacity .25s, -webkit-transform .5s;    transition: transform .5s, opacity .25s;    transition: transform .5s, opacity .25s, -webkit-transform .5s;    opacity: 0;    position: absolute;    z-index: 0;    margin: 4px;    left: 0;    top: 0;    right: 0;    bottom: 0;    border-radius: inherit;    pointer-events: none;    box-shadow: inset 0 0 0 2px #fff, 0 0 0 2px #fff, 2px -2px 11px #1beabd,  -2px 2px 11px #10abff;}
+
+[z-component][header-bar]
+.search-box ::-webkit-input-placeholder {
+    color: #cbd0d5;}
+
+[z-component][header-bar]
+.search-box :-ms-input-placeholder {
+    color: #cbd0d5;}
+
+[z-component][header-bar]
+.search-box ::-ms-input-placeholder {
+    color: #cbd0d5;}
+
+[z-component][header-bar]
+.search-box ::placeholder {
+    color: #cbd0d5;}
+
+</style>
+
+
+<main z-field="pages" layout="column stretch-stretch">
+
+<section class="page-scroll" layout="column center-center">
+
+    <div self="size-small center-center" class="animate__animated animate__fadeIn animate__faster"
+         style="padding-top: 56px; padding-left: 12px;padding-right: 12px; line-height: 150%">
+
+        <p>
+            Gpapplica 2021 http://appmakerpro.website/
+        </p>
+
+           </div>
+
+</section>
+
+</main>
+
+<!-- the pop-up context menu -->
+<div z-load="@lib/components/context-menu" class="visible-on-ready"
+     z-field="item-options-menu" z-lazy="false">
+    <div #menu>
+        <button #open-btn layout="row center-left">
+            <i class="material-icons">file_open</i>
+            <span>Open</span>
+        </button>
+        <button #bookmark-add-btn layout="row center-left">
+            <i class="material-icons">bookmark_add</i>
+            <span>Save</span>
+        </button>
+        <button #bookmark-remove-btn layout="row center-left">
+            <i class="material-icons" style="color: blue;">bookmark_remove</i>
+            <span>Remove from saved</span>
+        </button>
+        <button #share-btn layout="row center-left">
+            <i class="material-icons">share</i>
+            <span>Share</span>
+        </button>
+        <button layout="row center-left" disabled>
+            <i class="material-icons">not_interested</i>
+            <span>Hide items from this source</span>
+        </button>
+        <button layout="row center-left" disabled>
+            <i class="material-icons">thumb_up</i>
+            <span>More like this</span>
+        </button>
+        <button layout="row center-left" disabled>
+            <i class="material-icons">thumb_down</i>
+            <span>Less like this</span>
+        </button>
+    </div>
+</div>
+
+
+<!-- The footer with page select buttons -->
+
+<div z-field="footer-bar" layout="row center-center" z-component="fragment" footer-bar="">
+
+    
+    
+    <a href="/home/" layout="column center-center" class="button" footer-bar="">
+        <i class="material-icons" footer-bar="">home</i>
+        <span footer-bar="">Home</span>
+    </a>
+
+    
+    
+    <a href="/search/" layout="column center-center" class="button" footer-bar="">
+        <i class="material-icons" footer-bar="">search</i>
+        <span footer-bar="">Search</span>
+    </a>
+
+    
+    
+    <a href="/saved/" layout="column center-center" z-field="saved-button" class="button" footer-bar="">
+        <i class="material-icons" footer-bar="">bookmarks</i>
+        <span footer-bar="">Saved</span>
+    </a>
+
+   
+
+</div>
+
+<style>
+[z-component][footer-bar] {
+    position: fixed;    left:0; bottom:0; right: 0;    height: 56px;    background: rgba(248,248,248,1);    border-top: solid 1px rgba(0,0,0,0.25);    box-shadow: 0 -5px 2px -2px rgba(100,100,100,0.15);    text-align: center;    overflow: hidden;}
+
+[z-component][footer-bar]
+a.button {
+    font-weight: 400;    color: black;    width: 56px;    max-height: 56px;    margin-left: 8px;    margin-right: 8px;    background: transparent;    border: none;    border-radius: 8px;    text-align: center;}
+
+[z-component][footer-bar]
+a.button:focus {
+outline:0;}
+
+[z-component][footer-bar]
+a.button i {
+    color: rgba(0,0,0,0.5);    font-size: 24px !important;    padding: 2px;}
+
+[z-component][footer-bar]
+a.button span {
+    font-size: 12px;}
+
+[z-component][footer-bar]
+a.active, 
+[z-component][footer-bar]
+a.active i, 
+[z-component][footer-bar]
+a:hover, 
+[z-component][footer-bar]
+a:hover i {
+    color: blue!important;}
+
+</style>
+
+
+
+<!-- Built with love using zUIx Web Starter -->
+
+
+
+</body>
+
+<script>
+/* global zuix */
+
+let pageIndicator;
+let pageButtons;
+
+//__zuix__debug = true;
+zuix.lazyLoad(true, -window.innerWidth / 4);
+
+options = {
+  pageIndicator: {
+    contextId: 'page-indicator',
+    enablePaging: true,
+    startGap: 40,
+    ready: function(ctx) {
+      pageIndicator = ctx;
+      pageButtons = pageIndicator.$.find('div');
+      if (pageButtons.length() > 0) {
+        pageButtons.each(function(i, el, $el) {
+          $el.on('click', function(e) {
+            if (viewPager) viewPager.page(i);
+          });
+        });
+      }
+    }
+  }
+};
+
+function syncPageIndicator(page) {
+  if (pageButtons) {
+    pageButtons.eq(page.out).removeClass('active');
+    pageButtons.eq(page.in).addClass('active');
+  }
+  if (pageIndicator) pageIndicator.page(page.in);
+}
+
+function openContentFrame(url) {
+  const contentFrame = zuix.field('content-frame');
+  contentFrame.get().src = url;
+  contentFrame.animateCss('slideInRight', {duration: '500ms'}, function() {
+    contentFrame.get().focus();
+  }).removeClass('hidden');
+}
+function closeContentFrame(loc) {
+  const contentFrame = zuix.field('content-frame');
+  contentFrame.animateCss('slideOutRight', {duration: '300ms'}, ()=> {
+    contentFrame.addClass('hidden');
+    loc && loc.replace('about:blank');
+  });
+}
+
+</script>
+
+
+</html>
+

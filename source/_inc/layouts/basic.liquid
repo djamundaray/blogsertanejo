@@ -1,0 +1,54 @@
+---
+date: Last Modified
+---
+{% include "head_open.liquid" %}
+<style>
+{% include "layouts/basic/style.css" %}
+</style>
+{% include "head_close.html" %}
+
+{% if headerButtonIcon == null %}{% assign headerButtonIcon = 'menu' %}{% endif %}
+
+<body layout="column top-center">
+
+{% if imageCover %}
+    <img class="image-cover" src="{{ imageCover }}">
+{% endif %}
+
+<h1 class="title animate__animated animate__fadeIn">{{title}}</h1>
+{% if pubDate or author %}
+    <div self="size-large" layout="column top-stretch" style="padding-right: 12px;padding-left: 12px">
+        {% if author -%}
+            <strong>BY {{ author | upcase }}</strong>
+        {%- endif -%}
+        <small>{{ pubDate | date: 'D MMM yyyy' }}</small>
+    </div>
+{% endif %}
+
+<main self="size-large center" class="main-content animate__animated animate__fadeIn" layout="column top-stretch">
+
+    {{ content | safe }}
+
+    {% include "./basic/page_navigation.liquid" %}
+
+    {% include "./basic/page_related.liquid" %}
+
+</main>
+
+{% zx 'menu-overlay' 'actions-menu' %}
+- [Close](closeContent()) close
+
+{% endzx %}
+
+{% include "footer.liquid" %}
+
+{% include "body_end.liquid" %}
+
+</body>
+
+<!-- page script -->
+<script>
+    {% include "layouts/basic/script.js" %}
+</script>
+
+{% include "html_close.html" %}

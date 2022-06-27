@@ -1,0 +1,75 @@
+{
+  "zuix": {
+    "build": {
+      "input": "source",
+      "output": "docs",
+      "copy": [
+        "css",
+        "images",
+        ".nojekyll",
+        "browserconfig.xml",
+        "manifest.json",
+        "humans.txt",
+        "favicon.ico",
+        "robots.txt",
+        "pages/**/*.jpg",
+        "pages/**/*.png",
+        "pages/**/*.webp",
+        "pages/**/*.gif",
+        "pages/**/*.svg",
+        "pages/**/*.json"
+      ],
+      "ignore": [
+        "_filters",
+        "pages/**/_inc/*"
+      ],
+      "dataFolder": "_data",
+      "includesFolder": "_inc",
+      "componentsFolders": [
+        "app",
+        "lib"
+      ],
+      "bundle": {
+        "js": false,
+        "css": false,
+        "zuix": false
+      },
+      "serviceWorker": false,
+      "minify": {
+        "disable": true,
+        "collapseWhitespace": true,
+        "removeOptionalTags": true,
+        "removeRedundantAttributes": true,
+        "removeScriptTypeAttributes": true,
+        "removeTagWhitespace": false,
+        "useShortDoctype": false,
+        "collapseBooleanAttributes": true,
+        "removeAttributeQuotes": false,
+        "removeEmptyAttributes": true,
+        "minifyCSS": true,
+        "minifyJS": true
+      }
+    },
+    "app": {
+      "title": "my-site-name",
+      "baseUrl": "/",
+      "resourcePath": "/app/",
+      "libraryPath": {
+        "@lib": "{{ app.baseUrl }}lib/1.1/",
+        "@hgui": "https://genielabs.github.io/homegenie-web-ui/app/",
+        "@cdnjs": "https://cdnjs.cloudflare.com/ajax/libs/"
+      },
+      "zuixjs.github.io": {
+        "baseUrl": "/news-blog/",
+        "resourcePath": "{{ app['zuixjs.github.io'].baseUrl }}app/",
+        "libraryPath": {
+          "@lib": "{{ app['zuixjs.github.io'].baseUrl }}lib/1.1/",
+          "@hgui": "https://genielabs.github.io/homegenie-web-ui/app/",
+          "@cdnjs": "https://cdnjs.cloudflare.com/ajax/libs/"
+        }
+      },
+      "siteMapUrl": "https://zuixjs.github.io/news-blog",
+      "subtitle": "A new awesome website!"
+    }
+  }
+}
